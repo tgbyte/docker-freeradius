@@ -6,6 +6,7 @@ RUN apt-get update && \
     cd /dumb-init && \
     make && \
     cp dumb-init /sbin/dumb-init && \
+    cd / && \
     rm -rf /dumb-init && \
     apt-get remove --purge -y build-essential git && \
     apt-get --purge -y autoremove && \
