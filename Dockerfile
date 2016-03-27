@@ -9,11 +9,10 @@ RUN apt-get update && \
     rm -rf /dumb-init && \
     apt-get remove --purge -y build-essential git && \
     apt-get --purge -y autoremove && \
-    rm -rf /var/lib/apt/lists/*
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /etc/freeradius/*
 
 EXPOSE 1812/udp
-
-#USER freerad
 
 VOLUME /etc/freeradius
 
