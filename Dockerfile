@@ -1,4 +1,4 @@
-FROM armhf/debian:jessie
+FROM arm32v7/debian:8
 
 RUN apt-get update && \
     apt-get -o Apt::Install-Recommends=0 install -y freeradius build-essential git && \
@@ -18,4 +18,4 @@ EXPOSE 1812/udp
 VOLUME /etc/freeradius
 
 ENTRYPOINT ["/sbin/dumb-init"]
-CMD ["/usr/sbin/freeradius", "-f"]
+CMD ["/usr/sbin/freeradius", "-f", "-d", "/etc/freeradius", "-X"]
