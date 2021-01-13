@@ -17,7 +17,8 @@ RUN set -x \
         dumb-init \
         freeradius \
     && apt-get --purge -y autoremove \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    && rm /usr/bin/qemu-*-static
 
 VOLUME /etc/freeradius
 EXPOSE 1812/udp
