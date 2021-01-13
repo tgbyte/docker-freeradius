@@ -24,4 +24,4 @@ VOLUME /etc/freeradius
 EXPOSE 1812/udp
 
 ENTRYPOINT ["/usr/bin/dumb-init"]
-CMD ["/usr/sbin/freeradius", "-f", "-d", "/etc/freeradius", "-X"]
+CMD ["/usr/sbin/freeradius", "-f", "-d", "/etc/freeradius/3.0", "-X"]
