@@ -1,8 +1,8 @@
 FROM tgbyte/ubuntu:20.04
 
 RUN set -x \
-    && apt-get update \
-    && apt-get -o Apt::Install-Recommends=0 install -y \
+    && apt-get update -yy -q \
+    && DEBIAN_FRONTEND=noninteractive apt-get -o Apt::Install-Recommends=0 install -y -q \
         dumb-init \
         freeradius \
     && apt-get --purge -y autoremove \
