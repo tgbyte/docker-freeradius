@@ -5,6 +5,7 @@ RUN set -x \
     && DEBIAN_FRONTEND=noninteractive apt-get -o Apt::Install-Recommends=0 install -y -q \
         dumb-init \
         freeradius \
+    && rm /etc/ssl/private/ssl-cert-snakeoil.* \
     && apt-get --purge -y autoremove \
     && rm -rf /var/lib/apt/lists/*
 
