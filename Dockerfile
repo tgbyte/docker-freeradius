@@ -1,4 +1,4 @@
-FROM arm32v7/debian:8
+FROM debian
 
 RUN apt-get update && \
     apt-get -o Apt::Install-Recommends=0 install -y freeradius build-essential git && \
