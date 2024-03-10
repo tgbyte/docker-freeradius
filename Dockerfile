@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:jessie
 
 RUN apt-get update && \
     apt-get -o Apt::Install-Recommends=0 install -y freeradius build-essential git && \
